@@ -1,6 +1,6 @@
 import itertools
 import numpy as np
-
+#data
 conflict_table = [
     {'sub_id': 100, 'Conflict_sub_id': 200, 'NumOfInterection': 30},
     {'sub_id': 100, 'Conflict_sub_id': 300, 'NumOfInterection': 15},
@@ -12,7 +12,8 @@ subject_levels = [
     {'sub_id': 200, 'level': 2},
     {'sub_id': 300, 'level': 3}
 ]
-
+#----------------------------
+#Number of Courses
 subjects_per_level = 6
 
 def calculate_final_cost(schedule, conflict_table):
@@ -48,11 +49,13 @@ def find_best_schedule(levels, conflict_table):
             best_schedule = schedule
 
     return best_schedule, minimum_cost
-
+#------------------------------
+#execution
 levels = divide_subjects_by_levels(subject_levels)
 
 best_schedule, minimum_cost = find_best_schedule(levels, conflict_table)
-
+#---------------------------------
+#print result
 print("The best order:", best_schedule)
 print("minimum cost", minimum_cost)
 #khaled elnabawy
